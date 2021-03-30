@@ -121,11 +121,11 @@ let PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`Express server listening on ${PORT}`));
 
 // Connect to Salesforce
-let SF_CLIENT_ID = '3MVG9SOw8KERNN08arrxcMXue2AcBPI.n5X6y5EcA2IGG7ggkBgL5eNZeob6JYIEWpYnMfwhLu3Vr1BpT6jZk';//process.env.SF_CLIENT_ID;
-let SF_CLIENT_SECRET ='9395D2E24717CCD087FDCC6F7B65801AD1F52B31C9D3D8B67DFF9EDBAEC45F33'; //process.env.SF_CLIENT_SECRET;
-let SF_USER_NAME = 'leo@poc.aegon';// process.env.SF_USER_NAME;
-let SF_USER_PASSWORD = 'Inici4tivas';//process.env.SF_USER_PASSWORD;
-let SF_ENVIRONMENT = 'production'//process.env.SF_ENVIRONMENT || 'sandbox'; // default to sandbox if env variable not set
+let SF_CLIENT_ID = process.env.SF_CLIENT_ID;
+let SF_CLIENT_SECRET = process.env.SF_CLIENT_SECRET;
+let SF_USER_NAME = process.env.SF_USER_NAME;
+let SF_USER_PASSWORD = process.env.SF_USER_PASSWORD;
+let SF_ENVIRONMENT = process.env.SF_ENVIRONMENT || 'sandbox'; // default to sandbox if env variable not set
 
 let org = nforce.createConnection({
     clientId: SF_CLIENT_ID,
@@ -142,7 +142,7 @@ org.authenticate({ username: SF_USER_NAME, password: SF_USER_PASSWORD }, err => 
         console.error(err);
     } else {
         console.log("Salesforce authentication successful");
-    //    console.log(org.oauth.instance_url);
+        console.log(org.oauth.instance_url);
         subscribeToPlatformEvents();
         // For this demo, we use the id of the first account as the distributor id.
         // Make sure there us at least one account in your Salesforce org.
