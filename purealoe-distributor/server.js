@@ -142,7 +142,7 @@ org.authenticate({ username: SF_USER_NAME, password: SF_USER_PASSWORD }, err => 
         console.error(err);
     } else {
         console.log("Salesforce authentication successful");
-        console.log(org.oauth.instance_url);
+    //    console.log(org.oauth.instance_url);
         subscribeToPlatformEvents();
         // For this demo, we use the id of the first account as the distributor id.
         // Make sure there us at least one account in your Salesforce org.
