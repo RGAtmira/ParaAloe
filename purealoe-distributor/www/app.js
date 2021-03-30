@@ -100,6 +100,7 @@ socket.on('bundle_unsubmitted', function (data) {
 
 // Retrieve the existing list of bundles from Node server
 function getBundleList() {
+    alert('ESTOY ACAAAAAAA!!!');
     var xhr = new XMLHttpRequest(),
         method = 'GET',
         url = '/bundles';
