@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "author": "Christophe Coenraets <ccoenraets@gmail.com> (http://coenraets.org/)",
-  "license": "ISC",
+  "license": "ISC",  
+  "engines": {
+    "node": "12.1.0",
+    "npm": "6.9.0"
+  },
   "dependencies": {
     "cors": "^2.8.3",
     "express": "^4.16.3",
